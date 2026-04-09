@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validatrix - CPF & CNPJ 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <h1>Validatrix</h1>
+            </div>
+            <p class="subtitle">Gerador e Validador compatível com o novo CNPJ Alfanumérico (2026)</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-target="tab-gerador">Gerador</button>
+            <button class="tab-btn" data-target="tab-validador">Validador</button>
+            <button class="tab-btn" data-target="tab-exemplos">Código (Exemplos)</button>
+        </div>
+
+        <main class="tab-content-wrapper">
+            <!-- ABA: GERADOR -->
+            <section id="tab-gerador" class="tab-content active">
+                <div class="controls">
+                    <button class="action-btn" onclick="gerarCPF()">Gerar CPF</button>
+                    <button class="action-btn" onclick="gerarCNPJ(false)">Gerar CNPJ (Numérico)</button>
+                    <button class="action-btn" onclick="gerarCNPJ(true)">Gerar CNPJ (Alfanumérico)</button>
+                </div>
+                
+                <div class="result-box">
+                    <label>Com Máscara</label>
+                    <div class="input-group">
+                        <input type="text" id="output-mask" readonly placeholder="Gere um documento clicando acima" />
+                        <button class="copy-btn" onclick="copiarValor('output-mask')">Copiar</button>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <label>Somente Números / Letras</label>
+                    <div class="input-group">
+                        <input type="text" id="output-clean" readonly placeholder="Gere um documento clicando acima" />
+                        <button class="copy-btn" onclick="copiarValor('output-clean')">Copiar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA: VALIDADOR -->
+            <section id="tab-validador" class="tab-content">
+                <div class="result-box">
+                    <label>Informe o CPF ou CNPJ</label>
+                    <div class="input-group">
+                        <input type="text" id="input-validador" placeholder="Digite caracteres, com ou sem pontuação" />
+                        <button class="action-btn" onclick="validarDocumento()">Validar</button>
+                    </div>
+                </div>
+                
+                <div id="validation-result" class="validation-message" style="display: none;"></div>
+            </section>
+
+            <!-- ABA: EXEMPLOS -->
+            <section id="tab-exemplos" class="tab-content">
+                <div class="filters-row">
+                    <select id="code-lang-selector" onchange="renderCodeExample()">
+                        <option value="java" selected>Java</option>
+                        <option value="csharp">C#</option>
+                        <option value="ts">TypeScript</option>
+                        <option value="js">JavaScript</option>
+                        <option value="rust">Rust</option>
+                        <option value="go">Go (Golang)</option>
+                        <option value="swift">Swift</option>
+                        <option value="kotlin">Kotlin</option>
+                        <option value="sql">SQL (PostgreSQL)</option>
+                    </select>
+
+                    <select id="code-cat-selector" onchange="renderCodeExample()">
+                        <option value="isolado" selected>Isolados (CPF / CNPJ Separados)</option>
+                        <option value="unificado">Unificado (Detecta pelo tamanho)</option>
+                    </select>
+                </div>
+
+                <div class="code-box">
+                    <pre><code id="code-viewer" class="language-java"><!-- code injected by js --></code></pre>
+                </div>
+            </section>
+        </main>
+
+        <div class="pix-donation">
+            <p>Ajude a manter o projeto gratuito!</p>
+            <span>Contribua mandando um PIX pra nossa equipe através da chave abaixo:</span>
+            <div class="input-group">
+                <input type="text" id="pix-key" value="2b68cb70-658e-4791-b616-a6741153c368" readonly />
+                <button class="copy-btn pix" onclick="copiarValor('pix-key')">Copiar PIX</button>
+            </div>
+        </div>
+        
+        <div id="toast" class="toast">Ação concluída com sucesso!</div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="examples.js?v=2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
