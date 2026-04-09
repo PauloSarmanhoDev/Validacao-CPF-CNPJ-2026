@@ -80,8 +80,10 @@
                     </select>
 
                     <select id="code-cat-selector" onchange="renderCodeExample()">
-                        <option value="isolado" selected>Isolados (CPF / CNPJ Separados)</option>
-                        <option value="unificado">Unificado (Detecta pelo tamanho)</option>
+                        <option value="cpf" selected>Validar CPF</option>
+                        <option value="cnpj">Validar CNPJ (Numérico)</option>
+                        <option value="cnpj_alpha">Validar CNPJ Alfanumérico (2026)</option>
+                        <option value="todos">Todos (CPF + CNPJ unificado)</option>
                     </select>
                 </div>
 
@@ -104,7 +106,7 @@
     </div>
     
     <!-- Scripts -->
-    <script src="examples.js?v=2"></script>
+    <script src="examples.js?v=3"></script>
     <script src="script.js"></script>
 </body>
 </html>
