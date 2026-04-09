@@ -1,10 +1,10 @@
 const codeExamples = {
 
-  // ─────────────────────────────────────────────
-  // JAVA
-  // ─────────────────────────────────────────────
-  java: {
-    cpf: `// Validar CPF em Java
+    // ─────────────────────────────────────────────
+    // JAVA
+    // ─────────────────────────────────────────────
+    java: {
+        cpf: `// Validar CPF em Java
 
 public class CpfValidator {
     private static final int[] PESOS = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
@@ -28,7 +28,7 @@ public class CpfValidator {
     }
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em Java
+        cnpj: `// Validar CNPJ Numérico em Java
 // Compatível com a regra 2026 (algoritmo ASCII – funciona para numérico e alfanumérico)
 
 public class CnpjValidator {
@@ -54,7 +54,7 @@ public class CnpjValidator {
     }
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em Java – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em Java – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores (posições 13–14) são sempre numéricos.
 // O cálculo usa o valor ASCII do caractere menos 48.
@@ -83,7 +83,7 @@ public class CnpjAlphaValidator {
     }
 }`,
 
-    todos: `// Validação Unificada em Java (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em Java (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 public class DocumentValidator {
@@ -116,13 +116,13 @@ public class DocumentValidator {
         return (soma % 11 < 2) ? 0 : 11 - (soma % 11);
     }
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // C#
-  // ─────────────────────────────────────────────
-  csharp: {
-    cpf: `// Validar CPF em C#
+    // ─────────────────────────────────────────────
+    // C#
+    // ─────────────────────────────────────────────
+    csharp: {
+        cpf: `// Validar CPF em C#
 
 using System.Text.RegularExpressions;
 
@@ -146,7 +146,7 @@ public static class CpfValidator {
     }
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em C#
+        cnpj: `// Validar CNPJ Numérico em C#
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 using System.Text.RegularExpressions;
@@ -171,7 +171,7 @@ public static class CnpjValidator {
     }
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em C# – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em C# – Novo formato 2026
 // A raiz (8 primeiros caracteres) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores finais são sempre numéricos.
 // O cálculo usa valor ASCII de cada caractere menos 48.
@@ -198,7 +198,7 @@ public static class CnpjAlphaValidator {
     }
 }`,
 
-    todos: `// Validação Unificada em C# (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em C# (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 using System.Text.RegularExpressions;
@@ -231,13 +231,13 @@ public static class DocumentValidator {
         return r % 11 < 2 ? 0 : 11 - (r % 11);
     }
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // JAVASCRIPT
-  // ─────────────────────────────────────────────
-  js: {
-    cpf: `// Validar CPF em JavaScript
+    // ─────────────────────────────────────────────
+    // JAVASCRIPT
+    // ─────────────────────────────────────────────
+    js: {
+        cpf: `// Validar CPF em JavaScript
 
 const PESOS_CPF = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 
@@ -259,7 +259,7 @@ export function isValidCPF(cpf) {
     return cpf === base + dv1 + dv2;
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em JavaScript
+        cnpj: `// Validar CNPJ Numérico em JavaScript
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 const PESOS_CNPJ = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -282,7 +282,7 @@ export function isValidCNPJ(cnpj) {
     return cnpj === base + dv1 + dv2;
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em JavaScript – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em JavaScript – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa charCodeAt(i) - 48 para converter cada char.
@@ -308,7 +308,7 @@ export function isValidCNPJAlpha(cnpj) {
     return cnpj === base + dv1 + dv2;
 }`,
 
-    todos: `// Validação Unificada em JavaScript (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em JavaScript (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 const PESOS_CPF  = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -341,13 +341,13 @@ export function isValidDocument(doc) {
     }
     return false;
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // TYPESCRIPT
-  // ─────────────────────────────────────────────
-  ts: {
-    cpf: `// Validar CPF em TypeScript
+    // ─────────────────────────────────────────────
+    // TYPESCRIPT
+    // ─────────────────────────────────────────────
+    ts: {
+        cpf: `// Validar CPF em TypeScript
 
 const PESOS_CPF: number[] = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 
@@ -369,7 +369,7 @@ export function isValidCPF(cpf: string): boolean {
     return cpf === base + dv1 + dv2;
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em TypeScript
+        cnpj: `// Validar CNPJ Numérico em TypeScript
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 const PESOS_CNPJ: number[] = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -392,7 +392,7 @@ export function isValidCNPJ(cnpj: string): boolean {
     return cnpj === base + dv1 + dv2;
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em TypeScript – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em TypeScript – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa charCodeAt(i) - 48 para converter cada char.
@@ -417,7 +417,7 @@ export function isValidCNPJAlpha(cnpj: string): boolean {
     return cnpj === base + dv1 + dv2;
 }`,
 
-    todos: `// Validação Unificada em TypeScript (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em TypeScript (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 const PESOS_CPF: number[]  = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -448,13 +448,13 @@ export function isValidDocument(doc: string): boolean {
     }
     return false;
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // RUST
-  // ─────────────────────────────────────────────
-  rust: {
-    cpf: `// Validar CPF em Rust
+    // ─────────────────────────────────────────────
+    // RUST
+    // ─────────────────────────────────────────────
+    rust: {
+        cpf: `// Validar CPF em Rust
 
 const PESOS_CPF: &[u32] = &[11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
 
@@ -477,7 +477,7 @@ pub fn is_valid_cpf(cpf: &str) -> bool {
     clean == format!("{}{}{}", base, dv1, dv2)
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em Rust
+        cnpj: `// Validar CNPJ Numérico em Rust
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 const PESOS_CNPJ: &[u32] = &[6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -501,7 +501,7 @@ pub fn is_valid_cnpj(cnpj: &str) -> bool {
     clean == format!("{}{}{}", base, dv1, dv2)
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em Rust – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em Rust – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa o valor byte (ASCII) menos 48.
@@ -531,7 +531,7 @@ pub fn is_valid_cnpj_alpha(cnpj: &str) -> bool {
     clean == format!("{}{}{}", base, dv1, dv2)
 }`,
 
-    todos: `// Validação Unificada em Rust (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em Rust (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 const PESOS_CPF:  &[u32] = &[11, 10, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -567,13 +567,13 @@ pub fn is_valid_document(doc: &str) -> bool {
     }
     false
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // GO
-  // ─────────────────────────────────────────────
-  go: {
-    cpf: `// Validar CPF em Go (Golang)
+    // ─────────────────────────────────────────────
+    // GO
+    // ─────────────────────────────────────────────
+    go: {
+        cpf: `// Validar CPF em Go (Golang)
 
 package validator
 
@@ -613,7 +613,7 @@ func IsValidCPF(cpf string) bool {
 \treturn clean == base+strconv.Itoa(dv1)+strconv.Itoa(dv2)
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em Go (Golang)
+        cnpj: `// Validar CNPJ Numérico em Go (Golang)
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 package validator
@@ -651,7 +651,7 @@ func IsValidCNPJ(cnpj string) bool {
 \treturn clean == base+strconv.Itoa(dv1)+strconv.Itoa(dv2)
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em Go – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em Go – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa o valor byte (ASCII) menos 48.
@@ -692,7 +692,7 @@ func IsValidCNPJAlpha(cnpj string) bool {
 \treturn clean == base+strconv.Itoa(dv1)+strconv.Itoa(dv2)
 }`,
 
-    todos: `// Validação Unificada em Go (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em Go (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 package validator
@@ -736,13 +736,13 @@ func IsValidDocument(doc string) bool {
 \t}
 \treturn false
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // SWIFT
-  // ─────────────────────────────────────────────
-  swift: {
-    cpf: `// Validar CPF em Swift
+    // ─────────────────────────────────────────────
+    // SWIFT
+    // ─────────────────────────────────────────────
+    swift: {
+        cpf: `// Validar CPF em Swift
 
 import Foundation
 
@@ -769,7 +769,7 @@ func isValidCPF(_ cpf: String) -> Bool {
     return clean == "\\(base)\\(dv1)\\(dv2)"
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em Swift
+        cnpj: `// Validar CNPJ Numérico em Swift
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 import Foundation
@@ -796,7 +796,7 @@ func isValidCNPJ(_ cnpj: String) -> Bool {
     return clean == "\\(base)\\(dv1)\\(dv2)"
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em Swift – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em Swift – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa o valor Unicode scalar menos 48.
@@ -829,7 +829,7 @@ func isValidCNPJAlpha(_ cnpj: String) -> Bool {
     return clean == "\\(base)\\(dv1)\\(dv2)"
 }`,
 
-    todos: `// Validação Unificada em Swift (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em Swift (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 import Foundation
@@ -868,13 +868,13 @@ func isValidDocument(_ doc: String) -> Bool {
     }
     return false
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // KOTLIN
-  // ─────────────────────────────────────────────
-  kotlin: {
-    cpf: `// Validar CPF em Kotlin
+    // ─────────────────────────────────────────────
+    // KOTLIN
+    // ─────────────────────────────────────────────
+    kotlin: {
+        cpf: `// Validar CPF em Kotlin
 
 val PESOS_CPF = intArrayOf(11, 10, 9, 8, 7, 6, 5, 4, 3, 2)
 
@@ -895,7 +895,7 @@ fun isValidCPF(cpf: String): Boolean {
     return clean == base + dv1 + dv2
 }`,
 
-    cnpj: `// Validar CNPJ Numérico em Kotlin
+        cnpj: `// Validar CNPJ Numérico em Kotlin
 // Compatível com a regra 2026 (algoritmo ASCII)
 
 val PESOS_CNPJ = intArrayOf(6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2)
@@ -917,7 +917,7 @@ fun isValidCNPJ(cnpj: String): Boolean {
     return clean == base + dv1 + dv2
 }`,
 
-    cnpj_alpha: `// Validar CNPJ Alfanumérico em Kotlin – Novo formato 2026
+        cnpj_alpha: `// Validar CNPJ Alfanumérico em Kotlin – Novo formato 2026
 // A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
 // Os 2 dígitos verificadores são sempre numéricos.
 // O cálculo usa Char.code - 48 para converter cada caractere.
@@ -942,7 +942,7 @@ fun isValidCNPJAlpha(cnpj: String): Boolean {
     return clean == base + dv1 + dv2
 }`,
 
-    todos: `// Validação Unificada em Kotlin (CPF + CNPJ numérico e alfanumérico)
+        todos: `// Validação Unificada em Kotlin (CPF + CNPJ numérico e alfanumérico)
 // Detecta o tipo automaticamente pelo tamanho e composição.
 
 val PESOS_CPF  = intArrayOf(11, 10, 9, 8, 7, 6, 5, 4, 3, 2)
@@ -975,13 +975,13 @@ fun isValidDocument(doc: String): Boolean {
         else -> false
     }
 }`
-  },
+    },
 
-  // ─────────────────────────────────────────────
-  // SQL (PostgreSQL / PL/pgSQL)
-  // ─────────────────────────────────────────────
-  sql: {
-    cpf: `-- Validar CPF em PL/pgSQL (PostgreSQL)
+    // ─────────────────────────────────────────────
+    // SQL (PostgreSQL / PL/pgSQL)
+    // ─────────────────────────────────────────────
+    sql: {
+        cpf: `-- Validar CPF em PL/pgSQL (PostgreSQL)
 
 CREATE OR REPLACE FUNCTION calc_dv(base_str VARCHAR, pesos INT[]) RETURNS INT AS $$
 DECLARE
@@ -1012,7 +1012,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;`,
 
-    cnpj: `-- Validar CNPJ Numérico em PL/pgSQL (PostgreSQL)
+        cnpj: `-- Validar CNPJ Numérico em PL/pgSQL (PostgreSQL)
 -- Compatível com a regra 2026 (algoritmo ASCII)
 
 CREATE OR REPLACE FUNCTION calc_dv(base_str VARCHAR, pesos INT[]) RETURNS INT AS $$
@@ -1044,7 +1044,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;`,
 
-    cnpj_alpha: `-- Validar CNPJ Alfanumérico em PL/pgSQL – Novo formato 2026
+        cnpj_alpha: `-- Validar CNPJ Alfanumérico em PL/pgSQL – Novo formato 2026
 -- A raiz (12 primeiros, sendo 8 raiz + 4 filial) pode conter A–Z e 0–9.
 -- Os 2 dígitos verificadores (posições 13–14) são sempre numéricos.
 -- O cálculo usa ASCII de cada caractere menos 48.
@@ -1078,7 +1078,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;`,
 
-    todos: `-- Validação Unificada em PL/pgSQL (CPF + CNPJ numérico e alfanumérico)
+        todos: `-- Validação Unificada em PL/pgSQL (CPF + CNPJ numérico e alfanumérico)
 -- Detecta o tipo automaticamente pelo tamanho e composição.
 
 CREATE OR REPLACE FUNCTION calc_dv(base_str VARCHAR, pesos INT[]) RETURNS INT AS $$
@@ -1119,5 +1119,114 @@ BEGIN
     RETURN FALSE;
 END;
 $$ LANGUAGE plpgsql IMMUTABLE;`
-  }
+    },
+
+    // ─────────────────────────────────────────────
+    // SQL (Oracle / PL/SQL)
+    // ─────────────────────────────────────────────
+    oracle: {
+        cpf: `-- Validar CPF em Oracle PL/SQL
+
+CREATE OR REPLACE FUNCTION calc_dv_oracle(p_base IN VARCHAR2, p_pesos IN VARCHAR2) RETURN NUMBER IS
+    t_soma NUMBER := 0;
+    t_val  NUMBER;
+    t_len  NUMBER := LENGTH(p_base);
+    t_p_arr VARCHAR2(100) := p_pesos;
+    t_curr_p VARCHAR2(2);
+    t_p_idx NUMBER := 1;
+BEGIN
+    FOR i IN 1..t_len LOOP
+        t_val := ASCII(SUBSTR(p_base, i, 1)) - 48;
+        -- Extrai o peso da string separada por vírgula
+        t_curr_p := REGEXP_SUBSTR(t_pesos, '[^,]+', 1, (LENGTH(p_base) - t_len + i) + (REGEXP_COUNT(p_pesos, ',') + 1 - t_len));
+        t_soma := t_soma + (t_val * TO_NUMBER(t_curr_p));
+    END LOOP;
+    RETURN CASE WHEN MOD(t_soma, 11) < 2 THEN 0 ELSE 11 - MOD(t_soma, 11) END;
+END;
+/
+
+CREATE OR REPLACE FUNCTION is_valid_cpf(p_cpf IN VARCHAR2) RETURN VARCHAR2 IS
+    t_clean VARCHAR2(11) := REGEXP_REPLACE(p_cpf, '[^0-9]', '');
+    t_base  VARCHAR2(9);
+    t_dv1   NUMBER;
+    t_dv2   NUMBER;
+BEGIN
+    IF LENGTH(t_clean) != 11 OR REGEXP_LIKE(t_clean, '^(.)\\1*$') THEN RETURN 'FALSE'; END IF;
+    t_base := SUBSTR(t_clean, 1, 9);
+    t_dv1  := calc_dv_oracle(t_base, '11,10,9,8,7,6,5,4,3,2');
+    t_dv2  := calc_dv_oracle(t_base || t_dv1, '11,10,9,8,7,6,5,4,3,2');
+    IF t_clean = t_base || t_dv1 || t_dv2 THEN RETURN 'TRUE'; ELSE RETURN 'FALSE'; END IF;
+END;
+/`,
+
+        cnpj: `-- Validar CNPJ Numérico em Oracle PL/SQL
+-- Compatível com a regra 2026 (algoritmo ASCII)
+
+CREATE OR REPLACE FUNCTION is_valid_cnpj(p_cnpj IN VARCHAR2) RETURN VARCHAR2 IS
+    t_clean VARCHAR2(14) := REGEXP_REPLACE(p_cnpj, '[./-]', '');
+    t_base  VARCHAR2(12);
+    t_pesos VARCHAR2(100) := '6,5,4,3,2,9,8,7,6,5,4,3,2';
+    t_dv1   NUMBER;
+    t_dv2   NUMBER;
+BEGIN
+    IF LENGTH(t_clean) != 14 OR NOT REGEXP_LIKE(t_clean, '^[0-9]{14}$') OR REGEXP_LIKE(t_clean, '^(.)\\1*$') THEN 
+        RETURN 'FALSE'; 
+    END IF;
+    t_base := SUBSTR(t_clean, 1, 12);
+    t_dv1  := calc_dv_oracle(t_base, t_pesos);
+    t_dv2  := calc_dv_oracle(t_base || t_dv1, t_pesos);
+    IF t_clean = t_base || t_dv1 || t_dv2 THEN RETURN 'TRUE'; ELSE RETURN 'FALSE'; END IF;
+END;
+/`,
+
+        cnpj_alpha: `-- Validar CNPJ Alfanumérico em Oracle PL/SQL – Novo formato 2026
+-- A raiz (8 primeiros) pode conter letras A–Z e números 0–9.
+-- Os 2 dígitos verificadores são sempre numéricos.
+
+CREATE OR REPLACE FUNCTION is_valid_cnpj_alpha(p_cnpj IN VARCHAR2) RETURN VARCHAR2 IS
+    t_clean VARCHAR2(14) := UPPER(REGEXP_REPLACE(p_cnpj, '[./-]', ''));
+    t_base  VARCHAR2(12);
+    t_pesos VARCHAR2(100) := '6,5,4,3,2,9,8,7,6,5,4,3,2';
+    t_dv1   NUMBER;
+    t_dv2   NUMBER;
+BEGIN
+    IF LENGTH(t_clean) != 14 OR NOT REGEXP_LIKE(t_clean, '^[A-Z0-9]{12}[0-9]{2}$') OR REGEXP_LIKE(t_clean, '^0+$') THEN 
+        RETURN 'FALSE'; 
+    END IF;
+    t_base := SUBSTR(t_clean, 1, 12);
+    t_dv1  := calc_dv_oracle(t_base, t_pesos);
+    t_dv2  := calc_dv_oracle(t_base || t_dv1, t_pesos);
+    IF t_clean = t_base || t_dv1 || t_dv2 THEN RETURN 'TRUE'; ELSE RETURN 'FALSE'; END IF;
+END;
+/`,
+
+        todos: `-- Validação Unificada em Oracle PL/SQL (CPF + CNPJ numérico e alfanumérico)
+-- Detecta o tipo automaticamente pelo tamanho e composição.
+
+CREATE OR REPLACE FUNCTION is_valid_document(p_doc IN VARCHAR2) RETURN VARCHAR2 IS
+    t_clean VARCHAR2(20) := UPPER(REGEXP_REPLACE(p_doc, '[./-]', ''));
+    t_base  VARCHAR2(12);
+    t_dv1   NUMBER;
+    t_dv2   NUMBER;
+BEGIN
+    IF LENGTH(t_clean) = 11 AND REGEXP_LIKE(t_clean, '^[0-9]+$') THEN
+        -- Lógica CPF
+        IF REGEXP_LIKE(t_clean, '^(.)\\1*$') THEN RETURN 'FALSE'; END IF;
+        t_base := SUBSTR(t_clean, 1, 9);
+        t_dv1  := calc_dv_oracle(t_base, '11,10,9,8,7,6,5,4,3,2');
+        t_dv2  := calc_dv_oracle(t_base || t_dv1, '11,10,9,8,7,6,5,4,3,2');
+        IF t_clean = t_base || t_dv1 || t_dv2 THEN RETURN 'TRUE'; ELSE RETURN 'FALSE'; END IF;
+
+    ELSIF LENGTH(t_clean) = 14 AND REGEXP_LIKE(t_clean, '^[A-Z0-9]{12}[0-9]{2}$') THEN
+        -- Lógica CNPJ (Numérico ou Alpha)
+        IF REGEXP_LIKE(t_clean, '^0+$') THEN RETURN 'FALSE'; END IF;
+        t_base := SUBSTR(t_clean, 1, 12);
+        t_dv1  := calc_dv_oracle(t_base, '6,5,4,3,2,9,8,7,6,5,4,3,2');
+        t_dv2  := calc_dv_oracle(t_base || t_dv1, '6,5,4,3,2,9,8,7,6,5,4,3,2');
+        IF t_clean = t_base || t_dv1 || t_dv2 THEN RETURN 'TRUE'; ELSE RETURN 'FALSE'; END IF;
+    END IF;
+    RETURN 'FALSE';
+END;
+/`
+    }
 };
